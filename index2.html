@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"  />
+    
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
+
+  <body>
+    <header> 
+        <h1 class="display-3">Weather Dashboard</h1>
+    </header>
+    <div class ="input">
+      <form id="search-weather" class="mb-2">
+        <input type="text" name = "searchtext" class ="textarea" id="location" placeholder="Enter Location">
+        <button id = "searchbutton" class ="searchbtn" class="fas fa-search" type="button">Search</button>
+      </form>
+      
+      <section class="displayweather" id="day"></section>
+      <h2 class = saveheader> Saved Locations:</h2>
+    <p id="savelocation" class="savelocation"></p>
+      
+
+    </div>
+    
+      <script src="./assets/script.js"></script>
+    
+  </body>
+  
+  </html>

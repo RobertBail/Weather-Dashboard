@@ -1,0 +1,38 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    background-color: #e3f3f2;
+    flex:auto;
+  }
+
+  header {
+    background-color: #32caf8;
+  }
+
+  .textarea{
+   font-size: 20px;
+   
+  }
+
+  .searchbtn{
+    border: none;
+    background: #052d3a;
+    font-size: 20px;
+    color: #e3f3f2;
+  }
+
+  .displayweather{
+   color: #052d3a;
+   background-color: #d7f88b;
+   margin-left: 20%;
+   margin-right: 20%;
+   
+  }
+
+  .saveheader{
+    font-size: 30px;
+    box-sizing: content-box;
+    border-style: hidden;
+    background-color: #32cc8c;
+  }
