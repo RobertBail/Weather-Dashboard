@@ -1,6 +1,6 @@
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
+    
     text-align: center;
     background-color: #e3f3f2;
     flex:auto;
@@ -8,11 +8,18 @@ body {
 
   header {
     background-color: #32caf8;
+    
   }
+  
+  h1{
+  font-size: 60px;
+  margin-top: 0px;
+  }
+
 
   .textarea{
    font-size: 20px;
-   
+   margin-bottom: 5px;
   }
 
   .searchbtn{
@@ -22,17 +29,36 @@ body {
     color: #e3f3f2;
   }
 
-  .displayweather{
-   color: #052d3a;
-   background-color: #d7f88b;
-   margin-left: 20%;
-   margin-right: 20%;
+  .displayweather {
+    background-color: #d7f88b;
+    margin-bottom: 3px;
+  }
+  
+  .cityname{
    
+    font-size: 50px;
+    text-align: center;
+    color: #052d3a; 
+  }
+
+  .weatherinfo1,.weatherinfo2,.weatherinfo3,.weatherinfo4,.weatherinfo5{
+    display:inline-block;
+    width:20%;
+  }
+
+  .weathericon1, .weathericon2, .weathericon3, .weathericon4, .weathericon5{
+    width: 80px;
+    
   }
 
   .saveheader{
+    margin-top: 0%;
     font-size: 30px;
     box-sizing: content-box;
     border-style: hidden;
     background-color: #32cc8c;
+  }
+
+  .savelocation{
+    font-size: 20px;
   }

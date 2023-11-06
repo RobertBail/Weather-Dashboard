@@ -15,15 +15,34 @@
     </header>
     <div class ="input">
       <form id="search-weather" class="mb-2">
-        <input type="text" name = "searchtext" class ="textarea" id="location" placeholder="Enter Location">
+        <input type="text" name = "searchtext" class ="textarea" id="location" placeholder="Enter Location Name">
         <button id = "searchbutton" class ="searchbtn" class="fas fa-search" type="button">Search</button>
       </form>
-      
-      <section class="displayweather" id="day"></section>
+    </div>   
+    
+    <div class="displayweather">
+      <div class = "cityname"></div>
+          
+      <div class = "weatherinfo1"> 
+      <img class="weathericon1" src=""/>
+      </div>
+      <div class = "weatherinfo2">
+      <img class="weathericon2" src=""/>
+      </div>
+      <div class = "weatherinfo3">
+      <img class="weathericon3" src=""/>
+      </div>
+      <div class = "weatherinfo4">
+      <img class="weathericon4" src=""/>
+      </div>
+      <div class = "weatherinfo5">
+      <img class="weathericon5" src=""/>
+      </div>
+    </div>
+  
+    <div class = "saveloc">
       <h2 class = saveheader> Saved Locations:</h2>
-    <p id="savelocation" class="savelocation"></p>
-      
-
+      <h3 id="savelocation" class="savelocation"></h3>
     </div>
     
       <script src="./assets/script.js"></script>
