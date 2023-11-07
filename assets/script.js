@@ -1,10 +1,23 @@
-let searchinput = document.querySelector('#location');
+let searchinput = document.querySelector('.location');
 let button = document.getElementById('searchbutton');
 //let, var differences in 9, try var? var you can access outside a function?
 
-button.addEventListener('click', function(){
-getWeather()});
- 
+button.addEventListener('click', function (){
+getWeather();
+savelocation();
+});
+
+function savelocation(){
+  console.log(searchinput.value);
+
+  localStorage.setItem(".location", JSON.stringify(searchinput));
+  var savedlocation = JSON.parse(localStorage.getItem(".location"));
+  document.createElement("h3")
+  savedlocation.innerText = searchinput.value;
+  document.querySelector(".savelocation").append(searchinput.value + ". ");
+   
+}
+
 
  function getWeather(){
   fetch("https://api.openweathermap.org/data/2.5/forecast?q="+searchinput.value+"&units=metric&appid=da82657bac27586df572d5d5edb91ad0")
@@ -17,21 +30,20 @@ getWeather()});
     console.log(response);
     
     var weatherarea = document.querySelector('.displayweather');
+   
+    var weatherdiv1 = document.querySelector('.weatherinfo1');
+    var icon1 = document.querySelector('.weathericon1').src = `http://openweathermap.org/img/w/${response.list[4].weather[0].icon}.png`;
+    var weatherdiv2 = document.querySelector('.weatherinfo2');
+    var icon2 = document.querySelector('.weathericon2').src = `http://openweathermap.org/img/w/${response.list[12].weather[0].icon}.png`;
+    var weatherdiv3 = document.querySelector('.weatherinfo3');
+    var icon3 = document.querySelector('.weathericon3').src = `http://openweathermap.org/img/w/${response.list[20].weather[0].icon}.png`;
+    var weatherdiv4 = document.querySelector('.weatherinfo4');
+    var icon4 = document.querySelector('.weathericon4').src = `http://openweathermap.org/img/w/${response.list[28].weather[0].icon}.png`;
+    var weatherdiv5 = document.querySelector('.weatherinfo5');
+    var icon5 = document.querySelector('.weathericon5').src = `http://openweathermap.org/img/w/${response.list[36].weather[0].icon}.png`;
+    
     var cityname = document.querySelector('.cityname');
     cityname.innerText = searchinput.value;
-    
-    var weatherdiv1 = document.querySelector('.weatherinfo1');
-    var weatherdiv2 = document.querySelector('.weatherinfo2');
-    var weatherdiv3 = document.querySelector('.weatherinfo3');
-    var weatherdiv4 = document.querySelector('.weatherinfo4');
-    var weatherdiv5 = document.querySelector('.weatherinfo5');
-    
-    var icon1 = document.querySelector('.weathericon1').src = `http://openweathermap.org/img/w/${response.list[4].weather[0].icon}.png`;
-    var icon2 = document.querySelector('.weathericon2').src = `http://openweathermap.org/img/w/${response.list[12].weather[0].icon}.png`;
-    var icon3 = document.querySelector('.weathericon3').src = `http://openweathermap.org/img/w/${response.list[20].weather[0].icon}.png`;
-    var icon4 = document.querySelector('.weathericon4').src = `http://openweathermap.org/img/w/${response.list[28].weather[0].icon}.png`;
-    var icon5 = document.querySelector('.weathericon5').src = `http://openweathermap.org/img/w/${response.list[36].weather[0].icon}.png`;
-
 
     var date1 = document.createElement('p');
     for(i=0;i<40;i++){((i+1)).innerText= response.list[4].dt_txt};
@@ -117,7 +129,7 @@ getWeather()});
     var wind5 = document.createElement('p');
     for(i=0;i<40;i++){((i+1)).innerText= Number(response.list[36].wind.speed)};
     wind5.innerText = "Wind: " + Number(response.list[36].wind.speed)+ "km/h";
-    
+  
   
     weatherdiv1.appendChild(date1);
     weatherdiv1.appendChild(temp1);
@@ -144,6 +156,7 @@ getWeather()});
     weatherdiv5.appendChild(humidity5);
     weatherdiv5.appendChild(wind5);
 
+
     weatherarea.appendChild(weatherdiv1); 
     weatherarea.appendChild(weatherdiv2);
     weatherarea.appendChild(weatherdiv3);
@@ -155,18 +168,11 @@ getWeather()});
     weatherdiv3.appendChild(icon3);
     weatherdiv4.appendChild(icon4);
     weatherdiv5.appendChild(icon5);
+   
 
     weatherarea.appendChild(cityname);
     
  })
- savelocation();
-}
-
-function savelocation(){
-console.log(searchinput.value);
-localStorage.setItem("location", JSON.stringify(searchinput));
-JSON.parse(localStorage.getItem("location"));
-document.getElementById("savelocation").textContent = searchinput.value;
-//appendChild for saving locations?
+ 
 }
 
